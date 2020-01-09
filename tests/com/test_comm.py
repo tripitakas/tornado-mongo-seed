@@ -46,5 +46,5 @@ class TestCommon(APITestCase):
         self.assert_code(404, self.fetch('/api/err', body={}))
 
     def test_login(self):
-        self.assert_code(200, self.fetch('/api/user/login?next=/'))
-        self.assert_code(200, self.fetch('/?sso_id=5dc3a702f524debab6a74f2d&sso_name=张三&roles='))
+        if self.get_code(self.fetch('/api/user/login?next=/')) == 200:
+            self.assert_code(200, self.fetch('/?sso_id=5dc3a702f524debab6a74f2d&sso_name=张三&roles='))
