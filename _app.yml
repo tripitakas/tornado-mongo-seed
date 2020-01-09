@@ -1,0 +1,20 @@
+# 用于 set_secure_cookie 的秘钥, 生成方法: https://www.v2ex.com/t/12646
+cookie_secret: 'VZnbpP4kR0GqNgbMuuu6dkUfVrwqQkeWtBMJ3flp3HQ='
+
+# 网站
+site:
+  name: 网站名称
+  keywords: key1,key2
+  description: 网站描述
+  domain: my-site.net
+
+# MongoDB
+database:
+  host: localhost
+  port: 27017
+  name: demo
+  user:
+  password:
+
+# 单点登录地址
+sso: 'http://localhost:8000/user/login'

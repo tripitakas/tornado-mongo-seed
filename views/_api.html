@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{site['description']}}接口</title>
+  <link rel="shortcut icon" href="{{ static_url('imgs/favicon.ico') }}" type="image/x-icon">
+  <style>
+    body {
+      padding: 10px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h3, p {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: #335;
+    }
+
+    a:hover {
+      color: #00f;
+    }
+
+    .comment {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<a href="/api/user/login?next={{full_url}}" style="float: right">
+  {% if currentUserId %}{{current_user['name']}}{% else %}登录{% end %}
+</a>
+
+<h3>{{site['description']}}接口</h3>
+<p>版本：{{version}}</p>
+<table align="center">
+  <tr>
+    <th>序号</th>
+    <th>接口地址</th>
+    <th>实现函数</th>
+    <th>接口说明</th>
+  </tr>
+  {% for i, (url, func, repeat, file, comment) in enumerate(handlers) %}
+  <tr title="{{file}}">
+    <td>{{1 + i}}</td>
+    <td>{{url}}</td>
+    <td>{{func}}{{' (%d)' % repeat if repeat else ''}}</td>
+    <td class="comment">{{comment}}</td>
+  </tr>
+  {% end %}
+</table>
+
+</body>
+</html>
