@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.6"
+
+services:
+  - mongodb
+
+install:
+    - pip install -r tests/requirements.txt
+    - pip install codecov
+
+script:
+    - ./run_tests.py --cov=controller --cov=utils --cov-report=term tests
+
+after_success:
+    - codecov

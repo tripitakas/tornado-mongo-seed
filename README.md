@@ -2,6 +2,10 @@
 
 基于 Python3 + Tornado + MongoDB 的Web后端项目模板。
 
+
+[![Build Status](https://travis-ci.org/tripitakas/tornado-mongo-seed.svg?branch=master)](https://travis-ci.org/tripitakas/tornado-mongo-seed)
+[![Coverage](https://codecov.io/gh/tripitakas/tornado-mongo-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/tripitakas/tornado-mongo-seed)
+
 可以基于此项目替换：
 - tornado-mongo-seed 项目名
 - 默认端口号 8001
