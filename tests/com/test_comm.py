@@ -46,7 +46,5 @@ class TestCommon(APITestCase):
         self.assert_code(404, self.fetch('/api/err', body={}))
 
     def test_login(self):
-        self.assert_code(e.not_allowed_empty, self.fetch('/api/login_ok', body={}))
-        self.assert_code(200, self.fetch('/api/login_ok', body={'data': dict(
-            name='张三', email='test@test.com', roles='系统管理员', _id='﻿5dc3a702f524debab6a74f2d'
-        )}))
+        self.assert_code(200, self.fetch('/api/user/login?next=/'))
+        self.assert_code(200, self.fetch('/?sso_id=5dc3a702f524debab6a74f2d&sso_name=张三&roles='))
